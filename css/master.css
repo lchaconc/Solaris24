@@ -1,0 +1,14 @@
+/*Estilos generales*/
+
+.jumbotron {
+    background-color: beige;
+}
+
+.resaltada {
+    border: solid 2px red;
+}
+
+.img-ico {
+    width: 5%;
+    height: auto;
+}
