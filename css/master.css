@@ -1,7 +1,13 @@
 /*Estilos generales*/
 
+* {
+    box-sizing: border-box;
+}
+
+
 .jumbotron {
     background-color: beige;
+    padding: 0.5em 1em;    
 }
 
 .resaltada {
@@ -12,3 +18,4 @@
     width: 5%;
     height: auto;
 }
+

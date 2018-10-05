@@ -1,0 +1,13 @@
+/*Estilos index*/
+
+body {
+   /* background-image: url(../assets/images/madera.jpg); */
+   background-color: black;
+   color: burlywood;
+   font-family: 'Pacifico', cursive;   
+}
+
+.col-label {
+    margin-top: 6em;
+}
+
