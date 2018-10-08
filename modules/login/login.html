@@ -7,8 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="../../assets/ico/creative.png" type="image/png">
     <link rel="stylesheet" href="../../vendor/bootstrap-4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../../vendor/alertify/css/alertify.min.css">
+    <link rel="stylesheet" href="../../vendor/alertify/css/themes/default.min.css">
+
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/master.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./css/login.css" />
+
+    <script src="../../vendor/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="../../vendor/alertify/alertify.min.js"></script>
+    <script src="../../vendor/bootstrap-4.1/js/bootstrap.min.js"></script>
+
+    <script src="../../script/model.js"></script>
+    <script src="../../script/view.js"></script>
+    <script src="./js/login.js"></script>
   
 </head>
 <body>    
@@ -16,17 +28,19 @@
        <div class="container">
             <div class="row">
                     <div class="col-6 offset-md-3 col-form">
+                        <form action="" id="frmLogin">
                             <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">                      
+                                    <label for="txtEmail">Correo electrónico</label>
+                                    <input type="email" id="txtEmail" name="txtEmail"    required class="form-control" aria-describedby="emailHelp" placeholder="e-mail">                      
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    <label for="txtPassword">contraseña</label>
+                                    <input type="password" id="txtPassword" name="txtPassword"  pattern="[A-Za-z0-9_-]{1,15}"  required class="form-control"  placeholder="contraseña">
                                 </div>               
                                 
-                                <button class="btn btn-primary">Acceder</button>
+                                <input class="btn btn-light" id="btnLogin" type="submit" value="Iniciar Sesión">
+                        </form>    
                        </div>
                </div>
        </div>
