@@ -1,3 +1,18 @@
+<?php
+  session_start(); 
+
+  if (isset($_SESSION['usuario'])) {
+        // TODO: establecer que se implementa en caso de estar en siesión
+      } else {
+          header('Location: ../../');
+  }
+?>
+
+<script type="text/javascript">
+    var user = '<?php echo$_SESSION['usuario']['tipo'];?>'        
+</script>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,17 +35,7 @@
 <script src="../../script/model.js"></script>
 <script src="../../script/view.js"></script>
 <script src="./js/menu.js"></script>
-
-<script>
-
-    $(document).ready(function () {
-        var usr = sessionStorage.getItem("tipo");
-        console.log(usr);
-        
-    });
-
-</script>
-  
+ 
 </head>
 <body>
 

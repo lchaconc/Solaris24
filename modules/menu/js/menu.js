@@ -9,6 +9,18 @@ $(document).ready(function () {
 
 
 function loadMod() {
+    console.log(user);
+    
+}
+
+
+function layoutAdmin() {
+    console.log("distribución de administrador");
+    
+}
+
+function layoutUser() {
+    console.log("distribución de usuario");
     
 }
 
