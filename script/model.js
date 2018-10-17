@@ -18,7 +18,7 @@ Model.prototype.getItem = function (index) {
     return Model.prototype.dataSet[index];
 }
 
-Model.prototype.conAjax = function ( path, formData, dataType, mCallBack  ) { 
+Model.prototype.conectAjax = function ( path, formData, dataType, mCallBack  ) { 
     jQuery.ajax({
         url: path,
         type:'POST',
