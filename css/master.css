@@ -19,3 +19,19 @@
     height: auto;
 }
 
+.spn-ico {
+    font-size: 1em;
+    color: brown;    
+}
+
+.lnk-ico {
+    cursor: pointer;
+}
+
+.lnk-ico:hover {    
+    /*color: crimson; */
+    color: #fff;
+    background-color: brown;
+    padding: 0.4em;
+    border-radius: 10px;
+}

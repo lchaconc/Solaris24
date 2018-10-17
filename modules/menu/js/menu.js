@@ -3,15 +3,14 @@
 var m = new Model (), v = new View ();
 
 $(document).ready(function () {
-    console.log("Menu Ready");    
-   loadMod();
+    console.log("Menu Ready");
+    getUser();
+    loadMod();
 });
 
 
 function loadMod() {
-    console.log(user);
-    $("#spnTipoUsuario").text(user);
-    $("#spnNombre").text(nombre);
+
     handlerEvents();
     
 }
@@ -19,11 +18,22 @@ function loadMod() {
 
 function handlerEvents() {
     $("#btnIrMod01").click(function () { 
-        window.location.assign("../mod_01/mod_01.html");
+        window.location.assign("../form1/form1.php");
     });
     $("#btnIrMod02").click(function () { 
-        window.location.assign("../mod_02/mod_02.html");
+        window.location.assign("../table1/table1.php");
     });
+        $("#icoCloseSession").click(function () {
+                    alertify.confirm( nameSistem, "¿Desea cerrar sesión?",
+                    function(){
+                        window.location.assign("../../server/destroy_session.php");   
+                    },
+                    function(){
+                        console.log("cancela cierre sesión");
+                        
+                    });
+                         
+                });
 }
 
 

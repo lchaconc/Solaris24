@@ -24,18 +24,20 @@ Model.prototype.conectAjax = function ( path, formData, dataType, mCallBack  ) {
         type:'POST',
         dataType: dataType,
         data: formData,
-        beforeSend:function(){
-            alertify.message('Enviando datos. Por favor espere...');
+        beforeSend:function(){            
+            alertify.warning('Enviando datos. Por favor espere...');
             console.log("enviando");            
         }
       })
       .done(function(response){
+        alertify.success('¡Datos enviados satisfactoriamente!');
         console.log(response);
         mCallBack(response);
         
       })
       .fail(function(resp){
         console.log(resp.responseText);
+        alertify.error('Problemas al enviar datos');
       })
       .always(function(){
         console.log("complete");

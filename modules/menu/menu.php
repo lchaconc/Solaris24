@@ -27,6 +27,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
 <link rel="stylesheet" href="../../vendor/bootstrap-4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../vendor/alertify/css/alertify.min.css">
+<link rel="stylesheet" href="../../vendor/alertify/css/themes/default.min.css">
 <link rel="stylesheet" href="../../css/master.css">
 
 
@@ -36,6 +38,8 @@
 
 <script src="../../script/model.js"></script>
 <script src="../../script/view.js"></script>
+<script src="../../script/main.js"></script>
+
 <script src="./js/menu.js"></script>
  
 </head>
@@ -49,12 +53,15 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-6">
-                <span> <i class="fas fa-user"></i> Usuario:  </span> <span id="spnTipoUsuario"></span>  
-                
+            <div class="col-4">
+                <span class="spn-ico" > <i class="fas fa-user"></i> Usuario:  </span> <span id="spnTipoUsuario"></span>                  
             </div>
-            <div class="col-6 text-right">                
-                <span> <i class="fas fa-info-circle"></i> Nombre: </span> <span id="spnNombre"></span>
+            <div class="col-4 text-center">
+                <span  id="icoCloseSession" class="spn-ico lnk-ico" > <i class="fas fa-sign-out-alt"></i> Cerrar Sesión </span>                  
+            </div>          
+
+            <div class="col-4 text-right">                
+                <span class="spn-ico"> <i class="fas fa-info-circle"></i> Nombre: </span> <span id="spnNombre"></span>
             </div>
         </div>
         <hr>
@@ -72,12 +79,13 @@
         <div class="row">
             <div class="col-6">
                 <button type="button" id="btnIrMod01" class="btn btn-info  btn-lg btn-block">
-                <i class="fas fa-award"></i> Módulo 1
+                <i class="fab fa-wpforms"></i> Formulario 1
                 </button>
             </div>
+
             <div class="col-6">
             <button type="button" id="btnIrMod02" class="btn btn-info  btn-lg btn-block">
-                <i class="fas fa-chart-area"></i> Módulo 2
+            <i class="fas fa-table"></i> Tabla 1
                 </button>
             </div>
         </div>

@@ -12,6 +12,10 @@
 
   
  // $mysqli->set_charset('utf8');
-    mysqli_query($mysqli,"INSERT INTO datos (correo, nombre, opcion, notas, texto1, texto2) VALUES ('$$correo','$nombre','$opcion','$notas', '$texto1', '$texto2'  )") or die ("Problemas al añadir elementos a la BD".mysqli_error($mysqli));
-		$errors = array();
+    mysqli_query($mysqli,"INSERT INTO datos (correo, nombre, opcion, notas, texto1, texto2) VALUES ('$correo','$nombre','$opcion','$notas', '$texto1', '$texto2'  )") or die ("Problemas al añadir elementos a la BD".mysqli_error($mysqli));
+    $errors = array();
+    
+    //TODO cerrar conexion
+    mysqli_close($mysqli);
 ?>
+
