@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 08-10-2018 a las 05:12:58
--- Versión del servidor: 5.7.21
--- Versión de PHP: 7.1.16
+-- Tiempo de generación: 18-10-2018 a las 21:06:28
+-- Versión del servidor: 5.7.19
+-- Versión de PHP: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,35 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `solaris24`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `datos`
+--
+
+DROP TABLE IF EXISTS `datos`;
+CREATE TABLE IF NOT EXISTS `datos` (
+  `id_datos` int(11) NOT NULL AUTO_INCREMENT,
+  `correo` varchar(128) NOT NULL,
+  `nombre` varchar(128) NOT NULL,
+  `opcion` varchar(128) NOT NULL,
+  `notas` text NOT NULL,
+  `texto1` varchar(256) NOT NULL,
+  `texto2` varchar(256) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_datos`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `datos`
+--
+
+INSERT INTO `datos` (`id_datos`, `correo`, `nombre`, `opcion`, `notas`, `texto1`, `texto2`, `fecha`) VALUES
+(12, 'pillilo@fr.vf.com', 'moño', '1', ' popopopopop  ', '101010', '202020', '2018-10-18 19:53:46'),
+(7, 'yeyo@fr.vf.com', 'deco', '2', 'xxxx', 'zaxs', '12bg', '2018-10-18 17:25:01'),
+(8, 'lola@de-fr', 'ggggggg', '1', ' qw  ', '123', '456', '2018-10-18 17:25:36'),
+(9, 'yeyo@fr.vf.com', 'cosita bonita', '1', ' xxxx  ', 'zaxs', '12bg', '2018-10-18 19:36:48');
 
 -- --------------------------------------------------------
 
