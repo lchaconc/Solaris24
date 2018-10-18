@@ -81,6 +81,10 @@ View.prototype.formWithData = function (record, visor) {
   $(visor).empty();
     var htmlCode = (
       "<form action=''  id='frmData1'>" + 
+      "<div class='form-group'>" +
+      "<label for='txtId'>Id de elemento:</label>" +
+      "<input  name='id_data' type='text' class='form-control' id='txtId' value='"+ record.id_datos +"'>" +
+    "</div>" +
       "<div class='form-group'>" + 
         "<label for='exampleFormControlInput1'>Correo electrónico:</label>" +
         "<input name='email' type='email' class='form-control' id='exampleFormControlInput1' value='" + record.correo + "' >" +

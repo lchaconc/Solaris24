@@ -59,11 +59,11 @@ function renderTable(dataset) {
         $("#modalEdit").modal();
 
         //Evento de submit del formulario
-        $('#frmData1').submit(function (e) { 
+        $('#frmData1').submit(function (e) {
+            var formData = $(this).serialize(); 
             e.preventDefault();
-            $("#modalEdit").modal('hide');
-            var formData = $(this).serialize();
-            m.conectFormAjax("../../server/agregar_formulario.php", formData, '', loadMod );
+            $("#modalEdit").modal('hide');            
+            m.conectFormAjax("../../server/actualizar_elemento.php", formData, '', loadMod );
         });
         
     });
