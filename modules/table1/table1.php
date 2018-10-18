@@ -69,7 +69,7 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-10 offset-1">
+            <div id="visor"  class="col-10 offset-1">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta labore cupiditate provident non delectus, voluptate illum tempora architecto quas modi, tempore rem assumenda! Eum facere in porro, commodi cumque minima.      
             </div>
         </div>

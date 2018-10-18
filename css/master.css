@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: aliceblue;
+}
+
+.container {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 10px;
+}
+
 
 .jumbotron {
     background-color: beige;

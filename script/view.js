@@ -14,7 +14,7 @@ View.prototype.table = function (array, visor) {
  
   
     $(visor).empty();
-    var limite = array.length,
+    var limite = array.length, row,
     htmlTable = $(
       "<table class='table table-striped'>" +
       "<thead>" +
@@ -26,7 +26,9 @@ View.prototype.table = function (array, visor) {
           "<th scope='col'>Notas</th>" +
           "<th scope='col'>Texto 1</th>" +
           "<th scope='col'>Texto 2</th>" +
-          "<th scope='col'> Editar - Eliminar </th>" +
+          "<th scope='col'>Fecha</th>" +
+          "<th scope='col'> Editar </th>" +
+          "<th scope='col'> Eliminar </th>" +
         "</tr>" +
       "</thead>" +
       "</table>"    
@@ -55,10 +57,15 @@ View.prototype.table = function (array, visor) {
                 "<td>" + 
                     array[index].texto2 +
                 "</td>" +
-
                 "<td>" + 
-                      "<i id='faiEdt"+ index +"'  target='"+ array[index].id_datos +"'  class='fas fa-pencil-alt fa-btn-obj btn-edit'></i>  " +
-                      "<i id='faiDel"+ index +"'  target='"+ array[index].id_datos +"'   class='far fa-trash-alt fa-btn-obj btn-del'></i>" +   
+                  array[index].fecha +
+                "</td>" +
+
+                "<td class='text-center'>" + 
+                      "<i id='faiEdt"+ index +"'  target='"+ array[index].id_datos +"'  class='fas fa-pencil-alt lnk-ico btn-edit'></i>  " +                      
+                "</td>" +
+                "<td class='text-center'>" +                       
+                      "<i id='faiDel"+ index +"'  target='"+ array[index].id_datos +"'   class='far fa-trash-alt lnk-ico btn-del'></i>" +   
                 "</td>" +
                 "</tr>"
             );

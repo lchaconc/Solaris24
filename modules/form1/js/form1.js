@@ -3,7 +3,7 @@
 var m = new Model (), v = new View ();
 
 $(document).ready(function () {
-    getUser();
+    prepareMod();
     handlerEvents();
 });
 
@@ -11,7 +11,7 @@ $(document).ready(function () {
 jQuery(document).on('submit','#frmData1',function(event){ 
     event.preventDefault();
     var formData = $(this).serialize();
-    m.conectAjax("../../server/agregar_formulario.php", formData, '', messageUser );
+    m.conectFormAjax("../../server/agregar_formulario.php", formData, '', messageUser );
     
 });
 

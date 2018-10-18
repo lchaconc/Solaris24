@@ -1,6 +1,8 @@
 <?php
 $sql = "SELECT * FROM datos ORDER BY id_datos";
-include "conectar.php";
+
+require('conexion.php');
+$conexion = $mysqli;
 function desconectar($conexion){
 
     $close = mysqli_close($conexion);
@@ -8,16 +10,13 @@ function desconectar($conexion){
         if($close){
             echo '';
         }else{
-            echo 'Ha sucedido un error inexperado en la desconexion de la base de datos
-';
+            echo 'Ha sucedido un error inexperado en la desconexion de la base de datos';
         }
 
     return $close;
 }
 
-function obtenerArreglo($sql){
-    //Creamos la conexion con la funcion anterior
-    $conexion = conectarDB();
+function obtenerArreglo($sql, $conexion ){ 
 
     //generamos la consulta
 
@@ -41,6 +40,6 @@ function obtenerArreglo($sql){
     return $arreglo; //devolvemos el array
 }
 
-        $r = obtenerArreglo($sql);
+        $r = obtenerArreglo($sql, $conexion);
         echo json_encode($r);
 ?>

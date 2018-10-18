@@ -5,7 +5,7 @@ var m = new Model ();
 jQuery(document).on('submit','#frmLogin',function(event){ 
     event.preventDefault();
     var formData = $(this).serialize();
-    m.conectAjax("../../server/login.php", formData, 'json', redirectUser );
+    m.conectFormAjax("../../server/login.php", formData, 'json', redirectUser );
 
 
 

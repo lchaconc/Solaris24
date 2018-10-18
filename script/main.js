@@ -1,6 +1,17 @@
 "use strict";
 
-var nameSistem = "Solaris24";
+/* 
+constantes de etiquetas 
+*/
+
+const nameSistem = "Solaris24"; // etiqueta de títiulo para alert de alerftify
+
+
+
+function prepareMod() {
+    eGoHome();
+    getUser();
+}
 
 function getUser() {
     //Obtiene el usuario desde la session PHP 
@@ -8,3 +19,12 @@ function getUser() {
     $("#spnTipoUsuario").text(user);
     $("#spnNombre").text(nombre);
 }
+
+
+function eGoHome() {
+    $("#spnHome").click(function (e) { 
+        e.preventDefault();
+        window.location.assign("../menu/menu.php");
+    });
+}
+
