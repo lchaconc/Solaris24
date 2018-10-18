@@ -20,15 +20,15 @@ View.prototype.table = function (array, visor) {
       "<thead>" +
         "<tr>" +
           "<th scope='col'>#</th>" +          
-          "<th scope='col'>Correo</th>" +
-          "<th scope='col'>Nombre</th>" +
-          "<th scope='col'>Opción</th>" +
+          "<th class='text-center' scope='col'>Correo</th>" +
+          "<th class='text-center' scope='col'>Nombre</th>" +
+    /*   "<th scope='col'>Opción</th>" +
           "<th scope='col'>Notas</th>" +
           "<th scope='col'>Texto 1</th>" +
-          "<th scope='col'>Texto 2</th>" +
-          "<th scope='col'>Fecha</th>" +
-          "<th scope='col'> Editar </th>" +
-          "<th scope='col'> Eliminar </th>" +
+          "<th scope='col'>Texto 2</th>" +  */
+          "<th class='text-center' scope='col'>Fecha</th>" + 
+          "<th class='text-center' scope='col'> Ver - Editar </th>" +
+          "<th class='text-center' scope='col'> Eliminar </th>" +
         "</tr>" +
       "</thead>" +
       "</table>"    
@@ -39,13 +39,13 @@ View.prototype.table = function (array, visor) {
               row = $(
                 "<tr>" +
                 "<th scope='row'>" + fowNumb + "</th>" +                
-                "<td>" + 
+                "<td class='text-center'>" + 
                    array[index].correo +                   
                 "</td>" +                
-                  "<td>" + 
+                  "<td class='text-center'>" + 
                     array[index].nombre +
                   "</td>" +
-                  "<td>" + 
+           /*       "<td>" + 
                     array[index].opcion +
                   "</td>" +
                   "<td>" + 
@@ -53,11 +53,11 @@ View.prototype.table = function (array, visor) {
                 "</td>" +
                 "<td>" + 
                     array[index].texto1 +
-                "</td>" +
+                "</td>" +  
                 "<td>" + 
                     array[index].texto2 +
-                "</td>" +
-                "<td>" + 
+                "</td>" + */
+                "<td class='text-center'>" + 
                   array[index].fecha +
                 "</td>" +
 
@@ -76,3 +76,47 @@ View.prototype.table = function (array, visor) {
 
 
   }
+
+View.prototype.formWithData = function (record, visor) {
+  $(visor).empty();
+    var htmlCode = (
+      "<form action=''  id='frmData1'>" + 
+      "<div class='form-group'>" + 
+        "<label for='exampleFormControlInput1'>Correo electrónico:</label>" +
+        "<input name='email' type='email' class='form-control' id='exampleFormControlInput1' value='" + record.correo + "' >" +
+      "</div>" +
+      "<div class='form-group'>" +
+              "<label for='txtNameUser'>Nombre:</label>" +
+              "<input name='nameUser' type='text' class='form-control' id='txtNameUser' value='"+ record.nombre +"'  >" +
+      "</div>" +
+      "<div class='form-group'>" +
+        "<label for='exampleFormControlSelect1'>Seleccionar campo:</label>" +
+        "<select class='form-control' id='exampleFormControlSelect1' name='option' value='"+ record.opcion +"' >" +          
+          "<option>1</option>" +
+          "<option>2</option>" +
+          "<option>3</option>" +
+          "<option>4</option>" +
+          "<option>5</option>" +
+        "</select>" +
+      "</div>" +
+      "<div class='form-group'>" +
+        "<label for='exampleFormControlTextarea1'>Notas:</label>" +
+        "<textarea class='form-control' id='exampleFormControlTextarea1' rows='3' name='notes' > "+ record.notas +"  </textarea>" +
+      "</div>" +
+      "<div class='form-group'>" +
+              "<label for='formGroupExampleInput'>Texto corto 1:</label>" +
+              "<input name='text1' type='text' class='form-control' id='formGroupExampleInput' value='"+ record.texto1 +"'>" +
+            "</div>" +
+            "<div class='form-group'>" +
+              "<label for='formGroupExampleInput2'>Texto corto 2:</label>" +
+              "<input name='text2' type='text' class='form-control' id='formGroupExampleInput2' value='"+ record.texto2 +"'>" +
+            "</div>" +
+            "<hr>" +
+            "<div class='col-12 text-right' >" +
+              "<input class='btn btn-outline-primary' type='submit' value='Actualizar'>" +
+            "</div>" +
+
+"</form>"
+    );
+    $(visor).html(htmlCode);
+}

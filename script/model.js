@@ -8,7 +8,7 @@ Model.prototype.dataset;
 
 Model.prototype.loadJson = function (pathJson, mCallBack) {
     $.getJSON(pathJson, function (data) {
-        console.log(data);
+        //console.log(data);
         Model.prototype.dataset=data;
         mCallBack(data);
         })
@@ -16,6 +16,17 @@ Model.prototype.loadJson = function (pathJson, mCallBack) {
 
 Model.prototype.getDataset = function () { 
     return Model.prototype.dataSet;
+}
+
+Model.prototype.getItemByField = function ( fieldName, idVal ) {
+    var limit = Model.prototype.dataset.length,
+    record;
+    for (let index = 0; index < limit; index++) {
+        if (Model.prototype.dataset[index][fieldName] == idVal  ) {
+           record = Model.prototype.dataset[index];
+        }             
+    }
+    return record;
 }
 
 Model.prototype.getItem = function (index) { 

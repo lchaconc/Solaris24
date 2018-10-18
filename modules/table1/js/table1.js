@@ -20,6 +20,7 @@ function renderTable(dataset) {
     //eventos de de componentes de tabla
     // botón editar y botón eliminar
 
+    //Evento de eliminar registro
     $(".btn-del").click(function () { 
         
         let target = $(this).attr("target");
@@ -48,13 +49,26 @@ function renderTable(dataset) {
         
     });
 
-
+    //Evento de edición
     $(".btn-edit").click(function (e) { 
         e.preventDefault();
         let target = $(this).attr("target");
-        console.log("edit" + target);
+        //console.log("edit" + target);
+        //console.log(m.getItemByField("id_datos", target));        
+        v.formWithData(m.getItemByField("id_datos", target), "#visorModal");
+        $("#modalEdit").modal();
+
+        //Evento de submit del formulario
+        $('#frmData1').submit(function (e) { 
+            e.preventDefault();
+            $("#modalEdit").modal('hide');
+            var formData = $(this).serialize();
+            m.conectFormAjax("../../server/agregar_formulario.php", formData, '', loadMod );
+        });
         
     });
+
+
     
     
 }
