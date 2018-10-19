@@ -63,15 +63,66 @@
         </div>
         <hr>
         <div class="alert alert-primary" role="alert">
-            <button type="button" class="btn btn-light"> <i class="fas fa-upload"></i> Subir archivo</button>
+            <button id="btnSubir" class="btn btn-light"> <i class="fas fa-upload"></i> Subir archivo</button>
         </div>
         <br>
-        <div class="row">
-          <div class="col-12">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, non maiores? Asperiores quasi dolores, nobis distinctio quibusdam fugiat a consectetur alias reiciendis nihil sed accusamus provident possimus. Vitae, hic vel.
-          </div>
+        <div class="row" id="visor" > </div>
+
         </div>        
     </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalFile" tabindex="-1" role="dialog" aria-labelledby="modalFileLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalFileLabel">Seleccione el tipo de archivo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+            <img class="png-ico  btn-file" src="./assets/ico/pdf.png" alt="pdf">
+            <img class="png-ico btn-file" src="./assets/ico/speaker.png" alt="pdf">
+            <img class="png-ico btn-file" src="./assets/ico/camera.png" alt="pdf">
+            <img class="png-ico btn-file" src="./assets/ico/link.png" alt="pdf">
+        </div>
+        <div class="item-hide div-icons-fille" >
+        <br>
+            <h6> Descripción del archivo: </h6>
+                <div class="form-group">                  
+                  <input type="text" class="form-control" id="txtTitle" placeholder="Escriba aquí el nombre.">
+                </div>
+
+                 <div class="form-group">                  
+                  <input type="text" class="form-control" id="txtDesc" placeholder="Escriba aquí la descripción.">
+                </div>
+
+                 <h6> Archivo: </h6>
+
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Subir</span>
+                </div>
+               
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputfile">
+                  <label class="custom-file-label" id="lblInputFile" for="inputfile">Seleccione el archivo</label>
+                </div>
+              </div>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+       
+      </div>
+    </div>
+  </div>
+</div>
 
     
 </body>

@@ -128,3 +128,28 @@ View.prototype.formWithData = function (record, visor) {
     );
     $(visor).html(htmlCode);
 }
+
+View.prototype.cards = function (array, visor) {
+
+  $(visor).empty();
+
+  var 
+  icoPdf = "<i class='fas fa-file-pdf'></i>",
+  icoVideo = "<i class='fas fa-video'></i>",
+  icoAudio = "<i class='fas fa-volume-up'></i>",
+  icoLink = "<i class='fas fa-link'></i>",  
+  
+  htmlCard =   
+  "<div class='card text-center'>" +
+  "<div class='card-header' > "+ icoLink +" </div>" +
+  "<div class='card-body'>" +
+    "<h5 class='card-title' > "+  "TÍTIULO DE MUESTRA"  +" </h5>" +
+    "<p class='card-text'  > "+ " DESCRIPCIÓN " +"</p>" + 
+    "<button class='btn btn-primary'><i class='far fa-eye'></i> Ver </button>" +
+  "</div>" +
+  "<div class='card-footer text-muted'>" + " FECHA PUBLICACION " +  "</div>" +
+"</div>";
+
+$(visor).html(htmlCard);
+
+}

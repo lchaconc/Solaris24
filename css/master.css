@@ -14,6 +14,26 @@ body {
     border-radius: 10px;
 }
 
+.card {
+    margin: 1em;
+}
+
+.png-ico {
+    width: 4em;
+    height: auto;
+    cursor: pointer;
+ 
+}
+
+.png-ico:hover {    
+    filter:contrast(200%);
+}
+
+.item-hide {
+    display: none;
+}
+
+
 
 .jumbotron {
     background-color: beige;
