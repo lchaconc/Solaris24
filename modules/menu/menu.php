@@ -89,6 +89,20 @@
                 </button>
             </div>
         </div>
+    <br>
+        <div class="row">
+            <div class="col-6">
+                <button type="button" id="btnGoMedia" class="btn btn-info  btn-lg btn-block">
+                <i class="fas fa-file-upload"></i> Multimedia
+                </button>
+            </div>
+
+            <div class="col-6">
+            <button type="button" id="btnGoHelp" class="btn btn-info  btn-lg btn-block">
+                <i class="far fa-life-ring"></i> Ayuda
+            </button>
+            </div>
+        </div>
 
 
 

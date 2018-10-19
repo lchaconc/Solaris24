@@ -22,6 +22,7 @@ View.prototype.table = function (array, visor) {
           "<th scope='col'>#</th>" +          
           "<th class='text-center' scope='col'>Correo</th>" +
           "<th class='text-center' scope='col'>Nombre</th>" +
+          "<th class='text-center' scope='col'>Código</th>" +
     /*   "<th scope='col'>Opción</th>" +
           "<th scope='col'>Notas</th>" +
           "<th scope='col'>Texto 1</th>" +
@@ -44,6 +45,9 @@ View.prototype.table = function (array, visor) {
                 "</td>" +                
                   "<td class='text-center'>" + 
                     array[index].nombre +
+                  "</td>" +
+                  "<td class='text-center'>" + 
+                    array[index].id_datos +
                   "</td>" +
            /*       "<td>" + 
                     array[index].opcion +

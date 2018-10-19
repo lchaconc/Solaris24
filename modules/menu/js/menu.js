@@ -17,12 +17,18 @@ function loadMod() {
 
 
 function handlerEvents() {
+    //referencias
     $("#btnIrMod01").click(function () { 
         window.location.assign("../form1/form1.php");
     });
     $("#btnIrMod02").click(function () { 
         window.location.assign("../table1/table1.php");
     });
+    $("#btnGoMedia").click(function () { 
+        window.location.assign("../media/media.php");
+    });
+
+
         $("#icoCloseSession").click(function () {
                     alertify.confirm( nameSistem, "¿Desea cerrar sesión?",
                     function(){
