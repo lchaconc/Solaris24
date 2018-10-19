@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 18-10-2018 a las 21:06:28
+-- Tiempo de generación: 19-10-2018 a las 21:13:28
 -- Versión del servidor: 5.7.19
 -- Versión de PHP: 5.6.31
 
@@ -21,6 +21,21 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `solaris24`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `archivos`
+--
+
+DROP TABLE IF EXISTS `archivos`;
+CREATE TABLE IF NOT EXISTS `archivos` (
+  `id_archivos` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(64) NOT NULL,
+  `descripcion` varchar(64) NOT NULL,
+  `url` varchar(64) NOT NULL,
+  PRIMARY KEY (`id_archivos`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -47,7 +62,6 @@ CREATE TABLE IF NOT EXISTS `datos` (
 
 INSERT INTO `datos` (`id_datos`, `correo`, `nombre`, `opcion`, `notas`, `texto1`, `texto2`, `fecha`) VALUES
 (12, 'pillilo@fr.vf.com', 'moño', '1', ' popopopopop  ', '101010', '202020', '2018-10-18 19:53:46'),
-(7, 'yeyo@fr.vf.com', 'deco', '2', 'xxxx', 'zaxs', '12bg', '2018-10-18 17:25:01'),
 (8, 'lola@de-fr', 'ggggggg', '1', ' qw  ', '123', '456', '2018-10-18 17:25:36'),
 (9, 'yeyo@fr.vf.com', 'cosita bonita', '1', ' xxxx  ', 'zaxs', '12bg', '2018-10-18 19:36:48');
 
