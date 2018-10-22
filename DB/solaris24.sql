@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 22-10-2018 a las 03:39:34
--- Versión del servidor: 5.7.21
--- Versión de PHP: 7.1.16
+-- Tiempo de generación: 22-10-2018 a las 21:05:21
+-- Versión del servidor: 5.7.19
+-- Versión de PHP: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -37,7 +37,18 @@ CREATE TABLE IF NOT EXISTS `archivos` (
   `urlArchivo` varchar(64) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_archivos`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `archivos`
+--
+
+INSERT INTO `archivos` (`id_archivos`, `titulo`, `descripcion`, `tipo`, `urlArchivo`, `fecha`) VALUES
+(6, 'video1', 'prueba de video', 'mp4', '../../archivos_media/mp4/video1.mp4\r\n', '2018-10-22 13:29:24'),
+(7, 'video1', 'prueba de video', 'mp4', '../../archivos_media/mp4/video2.mp4\r\n', '2018-10-22 13:29:35'),
+(8, 'Noticias', 'Noticias nacionales', 'link', 'https://www.nacion.com/', '2018-10-22 20:41:34'),
+(9, 'Noticias', 'Noticias nacionales', 'mp3', '../../archivos_media/mp3/Good_Starts.mp3', '2018-10-22 20:41:41'),
+(10, 'Noticias', 'Noticias nacionales', 'mp3', '../../archivos_media/mp3/Race_Car.mp3\r\n', '2018-10-22 20:41:41');
 
 -- --------------------------------------------------------
 
@@ -56,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `datos` (
   `texto2` varchar(256) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_datos`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `datos`
@@ -65,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `datos` (
 INSERT INTO `datos` (`id_datos`, `correo`, `nombre`, `opcion`, `notas`, `texto1`, `texto2`, `fecha`) VALUES
 (12, 'pillilo@fr.vf.com', 'moño', '1', ' popopopopop  ', '101010', '202020', '2018-10-18 19:53:46'),
 (8, 'lola@de-fr', 'ggggggg', '1', ' qw  ', '123', '456', '2018-10-18 17:25:36'),
-(9, 'yeyo@fr.vf.com', 'cosita bonita', '1', ' xxxx  ', 'zaxs', '12bg', '2018-10-18 19:36:48');
+(13, 'demo1@mep.go.cr', 'Grupo de programadores', '5', 'esta es una demo\r\nfsd\r\nfsd\r\nfsd', 't1', 't2', '2018-10-22 19:13:59');
 
 -- --------------------------------------------------------
 
