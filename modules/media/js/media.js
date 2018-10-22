@@ -15,7 +15,7 @@ function loadMod() {
 }
 
 function renderCards() {
-    v.cards("array", "#visor");
+    m.loadJson("../../server/obtener_json_media.php", v.cards(m.getDataset(), "#visor"  )   );    
 }
 
 

@@ -137,8 +137,10 @@ View.prototype.cards = function (array, visor) {
   icoPdf = "<i class='fas fa-file-pdf'></i>",
   icoVideo = "<i class='fas fa-video'></i>",
   icoAudio = "<i class='fas fa-volume-up'></i>",
-  icoLink = "<i class='fas fa-link'></i>",  
+  icoLink = "<i class='fas fa-link'></i>", 
+  htmlContainer; 
   
+for (let index = 0; index < array.length; index++) {
   htmlCard =   
   "<div class='card text-center'>" +
   "<div class='card-header' > "+ icoLink +" </div>" +
@@ -149,6 +151,8 @@ View.prototype.cards = function (array, visor) {
   "</div>" +
   "<div class='card-footer text-muted'>" + " FECHA PUBLICACION " +  "</div>" +
 "</div>";
+  
+}
 
 $(visor).html(htmlCard);
 
