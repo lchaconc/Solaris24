@@ -4,7 +4,7 @@
 constantes de etiquetas 
 */
 
-const nameSistem = "Solaris24"; // etiqueta de títiulo para alert de alerftify
+const nameSistem = "Solaris 24 V1.0"; // etiqueta de títiulo para alert de alerftify
 
 
 

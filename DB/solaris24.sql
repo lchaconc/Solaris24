@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 19-10-2018 a las 21:13:28
--- Versión del servidor: 5.7.19
--- Versión de PHP: 5.6.31
+-- Tiempo de generación: 22-10-2018 a las 03:39:34
+-- Versión del servidor: 5.7.21
+-- Versión de PHP: 7.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -33,9 +33,11 @@ CREATE TABLE IF NOT EXISTS `archivos` (
   `id_archivos` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(64) NOT NULL,
   `descripcion` varchar(64) NOT NULL,
-  `url` varchar(64) NOT NULL,
+  `tipo` varchar(32) NOT NULL,
+  `urlArchivo` varchar(64) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_archivos`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
