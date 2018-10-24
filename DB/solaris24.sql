@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 22-10-2018 a las 21:05:21
+-- Tiempo de generación: 24-10-2018 a las 19:22:47
 -- Versión del servidor: 5.7.19
 -- Versión de PHP: 5.6.31
 
@@ -35,20 +35,24 @@ CREATE TABLE IF NOT EXISTS `archivos` (
   `descripcion` varchar(64) NOT NULL,
   `tipo` varchar(32) NOT NULL,
   `urlArchivo` varchar(64) NOT NULL,
+  `nombre_usuario` varchar(256) NOT NULL,
+  `correo_usuario` varchar(512) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_archivos`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `archivos`
 --
 
-INSERT INTO `archivos` (`id_archivos`, `titulo`, `descripcion`, `tipo`, `urlArchivo`, `fecha`) VALUES
-(6, 'video1', 'prueba de video', 'mp4', '../../archivos_media/mp4/video1.mp4\r\n', '2018-10-22 13:29:24'),
-(7, 'video1', 'prueba de video', 'mp4', '../../archivos_media/mp4/video2.mp4\r\n', '2018-10-22 13:29:35'),
-(8, 'Noticias', 'Noticias nacionales', 'link', 'https://www.nacion.com/', '2018-10-22 20:41:34'),
-(9, 'Noticias', 'Noticias nacionales', 'mp3', '../../archivos_media/mp3/Good_Starts.mp3', '2018-10-22 20:41:41'),
-(10, 'Noticias', 'Noticias nacionales', 'mp3', '../../archivos_media/mp3/Race_Car.mp3\r\n', '2018-10-22 20:41:41');
+INSERT INTO `archivos` (`id_archivos`, `titulo`, `descripcion`, `tipo`, `urlArchivo`, `nombre_usuario`, `correo_usuario`, `fecha`) VALUES
+(6, 'Mano de bebé', 'Tierna mano de bebé con la de su mamá', 'mp4', '../../archivos_media/mp4/video1.mp4\r\n', 'Pedro Campos', 'pedro@correo.de', '2018-10-22 13:29:24'),
+(7, 'Tinta en agua', 'Hermoso efecto de tinta desparramándose en agua', 'mp4', '../../archivos_media/mp4/video2.mp4\r\n', 'Jimena Mendoza', 'jime@correo.de', '2018-10-22 13:29:35'),
+(8, 'Noticias', 'Noticias nacionales', 'lnk', 'https://www.nacion.com/', 'Pedro Campos', 'pedro@correo.de', '2018-10-22 20:41:34'),
+(5, 'Good Starts', 'Melodía hermosa para meditar', 'mp3', '../../archivos_media/mp3/Good_Starts.mp3', 'Jimena Mendoza', 'jime@correo.de', '2018-10-22 20:41:41'),
+(10, 'Race Car', 'Música para fondo de juego de carreras', 'mp3', '../../archivos_media/mp3/Race_Car.mp3\r\n', 'Jimena Mendoza', 'jime@correo.de', '2018-10-22 20:41:41'),
+(4, 'Los cuatro Acuerdos', 'Un libro de sabiduría tolteca\r\n', 'pdf', '../../archivos_media/pdf/Los-Cuatro-Acuerdos.pdf\r\n', 'Pedro Campos', 'pedro@correo.de', '2018-10-22 20:41:41'),
+(12, 'Teresita de Jesús', 'Historias de santos\r\n', 'pdf', '../../archivos_media/pdf/Teresita-de-Jesus-Manuscritos-com.pdf\r\n', 'Pedro Campos', 'pedro@correo.de', '2018-10-22 20:41:41');
 
 -- --------------------------------------------------------
 

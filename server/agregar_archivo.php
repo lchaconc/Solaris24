@@ -9,14 +9,21 @@
    $tipo = $_POST['typeFile'];
 
     echo $tipo;
-   $archivo  = basename($_FILES['objFile']['name'], ".pdf");
+    
+   //$archivo  = basename($_FILES['objFile']['name']);
+   $archivo  = $_FILES['objFile']['name'];
    echo $archivo;
 
   
 
    $directorio = "../archivos_media/".$tipo."/";
 
-  $archivo = preg_replace("/[^A-Za-z0-9_-]/", "", $archivo).$tipo;
+  //$archivo = preg_replace("/[^A-Za-z0-9_-]/", "", $archivo);
+
+  
+  
+  
+  $archivo = preg_replace("/[A-Za-z0-9-.]/", "", $archivo);
    if(move_uploaded_file($_FILES['objFile']['tmp_name'], $directorio.$archivo)) {
    $urlArchivo = "../".$directorio.$archivo;
 }

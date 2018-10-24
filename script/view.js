@@ -159,7 +159,7 @@ for (let index = 0; index <limite; index++) {
     tmpIco = "<i class='fas fa-video'></i>";
     coreVisor = "<video controls src='" + array[index].urlArchivo + "' ></video>";
     break;
-    case "jpg":
+    case "img":
     tmpIco = "<i class='far fa-image'></i>";
     coreVisor = "<img class='img-fluid' src='" + array[index].urlArchivo + "' alt='imagen' ></img>";
     break;
