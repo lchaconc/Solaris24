@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 24-10-2018 a las 19:22:47
+-- Tiempo de generación: 24-10-2018 a las 21:03:15
 -- Versión del servidor: 5.7.19
 -- Versión de PHP: 5.6.31
 
@@ -35,24 +35,27 @@ CREATE TABLE IF NOT EXISTS `archivos` (
   `descripcion` varchar(64) NOT NULL,
   `tipo` varchar(32) NOT NULL,
   `urlArchivo` varchar(64) NOT NULL,
-  `nombre_usuario` varchar(256) NOT NULL,
-  `correo_usuario` varchar(512) NOT NULL,
+  `nombre` varchar(256) NOT NULL,
+  `correo` varchar(512) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_archivos`)
-) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `archivos`
 --
 
-INSERT INTO `archivos` (`id_archivos`, `titulo`, `descripcion`, `tipo`, `urlArchivo`, `nombre_usuario`, `correo_usuario`, `fecha`) VALUES
+INSERT INTO `archivos` (`id_archivos`, `titulo`, `descripcion`, `tipo`, `urlArchivo`, `nombre`, `correo`, `fecha`) VALUES
 (6, 'Mano de bebé', 'Tierna mano de bebé con la de su mamá', 'mp4', '../../archivos_media/mp4/video1.mp4\r\n', 'Pedro Campos', 'pedro@correo.de', '2018-10-22 13:29:24'),
 (7, 'Tinta en agua', 'Hermoso efecto de tinta desparramándose en agua', 'mp4', '../../archivos_media/mp4/video2.mp4\r\n', 'Jimena Mendoza', 'jime@correo.de', '2018-10-22 13:29:35'),
 (8, 'Noticias', 'Noticias nacionales', 'lnk', 'https://www.nacion.com/', 'Pedro Campos', 'pedro@correo.de', '2018-10-22 20:41:34'),
 (5, 'Good Starts', 'Melodía hermosa para meditar', 'mp3', '../../archivos_media/mp3/Good_Starts.mp3', 'Jimena Mendoza', 'jime@correo.de', '2018-10-22 20:41:41'),
 (10, 'Race Car', 'Música para fondo de juego de carreras', 'mp3', '../../archivos_media/mp3/Race_Car.mp3\r\n', 'Jimena Mendoza', 'jime@correo.de', '2018-10-22 20:41:41'),
 (4, 'Los cuatro Acuerdos', 'Un libro de sabiduría tolteca\r\n', 'pdf', '../../archivos_media/pdf/Los-Cuatro-Acuerdos.pdf\r\n', 'Pedro Campos', 'pedro@correo.de', '2018-10-22 20:41:41'),
-(12, 'Teresita de Jesús', 'Historias de santos\r\n', 'pdf', '../../archivos_media/pdf/Teresita-de-Jesus-Manuscritos-com.pdf\r\n', 'Pedro Campos', 'pedro@correo.de', '2018-10-22 20:41:41');
+(12, 'Teresita de Jesús', 'Historias de santos\r\n', 'pdf', '../../archivos_media/pdf/Teresita-de-Jesus-Manuscritos-com.pdf\r\n', 'Pedro Campos', 'pedro@correo.de', '2018-10-22 20:41:41'),
+(39, 'ddede', 'xxx', 'img', '../../archivos_media/img/angry-red-bird-256.png', 'Pedro Campos', 'pedro@correo.de', '2018-10-24 20:18:31'),
+(38, 'prueba', 'po', 'img', '../../archivos_media/img/Figura4.jpg', 'Pedro Campos', 'pedro@correo.de', '2018-10-24 20:16:17'),
+(40, 'no rere', ' erererere', 'pdf', '../../archivos_media/pdf/31351151-HTML5-Canvas-Cheat-Sheet.pdf', 'Pedro Campos', 'pedro@correo.de', '2018-10-24 20:53:49');
 
 -- --------------------------------------------------------
 
@@ -71,16 +74,16 @@ CREATE TABLE IF NOT EXISTS `datos` (
   `texto2` varchar(256) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_datos`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `datos`
 --
 
 INSERT INTO `datos` (`id_datos`, `correo`, `nombre`, `opcion`, `notas`, `texto1`, `texto2`, `fecha`) VALUES
-(12, 'pillilo@fr.vf.com', 'moño', '1', ' popopopopop  ', '101010', '202020', '2018-10-18 19:53:46'),
 (8, 'lola@de-fr', 'ggggggg', '1', ' qw  ', '123', '456', '2018-10-18 17:25:36'),
-(13, 'demo1@mep.go.cr', 'Grupo de programadores', '5', 'esta es una demo\r\nfsd\r\nfsd\r\nfsd', 't1', 't2', '2018-10-22 19:13:59');
+(13, 'demo1@mep.go.cr', 'Grupo de programadores', '5', 'esta es una demo\r\nfsd\r\nfsd\r\nfsd', 't1', 't2', '2018-10-22 19:13:59'),
+(14, 'sir@mep.go.cr', 'Sirlenita', '1', ' esta es una demo  esta es el campo editado', 'dasda 123', 'dasdas 456', '2018-10-24 20:50:11');
 
 -- --------------------------------------------------------
 
@@ -92,7 +95,7 @@ DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_usuario` int(64) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(256) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-  `usuario` varchar(256) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `correo` varchar(256) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `password` varchar(256) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `tipo` varchar(128) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id_usuario`)
@@ -102,9 +105,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nombre`, `usuario`, `password`, `tipo`) VALUES
-(1, 'Pedro', 'pedro@correo.de', 'pedro', 'Admin'),
-(2, 'Jimena', 'jime@correo.de', 'jime', 'Usuario');
+INSERT INTO `usuarios` (`id_usuario`, `nombre`, `correo`, `password`, `tipo`) VALUES
+(1, 'Pedro Campos', 'pedro@correo.de', 'pedro', 'Admin'),
+(2, 'Jimena Mendoza', 'jime@correo.de', 'jime', 'Usuario');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
