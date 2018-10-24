@@ -145,7 +145,7 @@ for (let index = 0; index <limite; index++) {
   var tmpIco, coreVisor;
 
   switch (array[index].tipo) {
-    case "link":
+    case "lnk":
     tmpIco = "<i class='fas fa-link'></i>";
     coreVisor = "<a href='"+ array[index].urlArchivo +"' target='_balnk' >" +
     "<img class='img-thumbnail lnk-ico' src='assets/ico/link.png' alt='imagen link de sitio web'></img>" +
@@ -158,6 +158,10 @@ for (let index = 0; index <limite; index++) {
     case "mp4":
     tmpIco = "<i class='fas fa-video'></i>";
     coreVisor = "<video controls src='" + array[index].urlArchivo + "' ></video>";
+    break;
+    case "jpg":
+    tmpIco = "<i class='far fa-image'></i>";
+    coreVisor = "<img class='img-fluid' src='" + array[index].urlArchivo + "' alt='imagen' ></img>";
     break;
     case "pdf":
     tmpIco = "<i class='fas fa-file-pdf'></i>";

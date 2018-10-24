@@ -24,19 +24,24 @@ function renderCards() {
 
 
 function handlerEvents() {
+    var fileType;  //t8ipo de archivo que seleciona el usuario para publicar
+
     $("#btnSubir").click(function (e) { 
         e.preventDefault();
         $("#modalFile").modal();
     });
 
 
-    $(".btn-file").click(function () { 
+    $(".btn-file").click(function () {
+        fileType = $(this).attr("target");
+        console.log(fileType);
+        
         $(".div-icons-fille").slideDown();
         
     });
 
     $("#inputfile").change(function () {
-        console.log(this.files[0].name  );
+        //console.log(this.files[0].name  );
         var objFile = $(this);
         $("#lblInputFile").html(this.files[0].name);
 
@@ -44,10 +49,11 @@ function handlerEvents() {
         var formData = new FormData();   
         formData.append("titleFile", $("#txtTitle").val() );
         formData.append("descFile", $("#txtDesc").val() );
+        formData.append("typeFile", fileType );
         formData.append("objFile",  objFile[0].files[0]);
 
         //Envío del arcivo junto con sus metadatos
-        m.conectDataAjax("./server/agregar_archivo.php",formData, hola );
+        m.conectDataAjax("../../server/agregar_archivo.php",formData, hola );
 
         $(".div-icons-fille").slideUp(
             function () {

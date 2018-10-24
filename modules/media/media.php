@@ -89,10 +89,11 @@
       </div>
       <div class="modal-body">
         <div>
-            <img class="png-ico  btn-file" src="./assets/ico/pdf.png" alt="pdf">
-            <img class="png-ico btn-file" src="./assets/ico/speaker.png" alt="pdf">
-            <img class="png-ico btn-file" src="./assets/ico/camera.png" alt="pdf">
-            <img class="png-ico btn-file" src="./assets/ico/link.png" alt="pdf">
+            <img class="png-ico btn-file" src="./assets/ico/pdf.png" target="pdf"  alt="publicar pdf" title="publicar pdf" >
+            <img class="png-ico btn-file" src="./assets/ico/speaker.png" target="mp3" alt="publicar mp3" title="publicar mp3"  >
+            <img class="png-ico btn-file" src="./assets/ico/camera.png" target="mp4" alt="publicar video" title="publicar video" >
+            <img class="png-ico btn-file" src="./assets/ico/jpeg.png" target="jpg" alt="publicar imagen" title="publicar imagen" >
+            <img class="png-ico btn-file" src="./assets/ico/link.png" target="lnk" alt="Publicar link" title="Publicar link" >
         </div>
         <div class="item-hide div-icons-fille" >
         <br>
