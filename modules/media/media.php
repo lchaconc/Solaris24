@@ -11,6 +11,13 @@
 <script type="text/javascript">
     var user = '<?php echo$_SESSION['usuario']['tipo'];?>' 
     var nombre = '<?php echo$_SESSION['usuario']['nombre'];?>'            
+    var correo = '<?php echo$_SESSION['usuario']['correo'];?>' 
+
+      //console.log(user);
+      //console.log(nombre);
+      //console.log(correo);
+
+
 </script>
 
 

@@ -17,7 +17,7 @@ function loadMod() {
 function renderCards() {
    // m.loadJson("../../server/obtener_json_media.php", v.cards(m.getDataset(), "#visor"  )   );    
    m.loadJson("../../server/obtener_json_media.php", function (array) {       
-       v.cards(array, "#visor");
+       v.cards(array.reverse(), "#visor", correo );
    } )
 }
 
@@ -49,11 +49,17 @@ function handlerEvents() {
         var formData = new FormData();   
         formData.append("titleFile", $("#txtTitle").val() );
         formData.append("descFile", $("#txtDesc").val() );
+        
+        formData.append("correo", correo );
+        formData.append("nombre", nombre );
+
         formData.append("typeFile", fileType );
         formData.append("objFile",  objFile[0].files[0]);
 
         //Envío del arcivo junto con sus metadatos
-        m.conectDataAjax("../../server/agregar_archivo.php",formData, hola );
+        m.conectDataAjax("../../server/agregar_archivo.php",formData, function (param) {
+            loadMod();
+          } );
 
         $(".div-icons-fille").slideUp(
             function () {
@@ -63,7 +69,4 @@ function handlerEvents() {
     });
 }
 
-function hola(params) {
-    console.log("exito");
-    
-}
+

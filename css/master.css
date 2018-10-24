@@ -59,7 +59,9 @@ audio {
 
 .spn-ico {
     font-size: 1em;
-    color: brown;    
+    color: brown; 
+    cursor: pointer;
+    margin: 1em;   
 }
 
 .lnk-ico {

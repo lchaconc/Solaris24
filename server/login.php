@@ -12,7 +12,7 @@
 
     //real escape es para filtrar los carcateres que van a etrar a la consulta SQL para evita SQL inyection
 
-    $usuario = $mysqli->real_escape_string( $_POST['txtEmail']);
+    $correo = $mysqli->real_escape_string( $_POST['txtEmail']);
     $pas = $mysqli->real_escape_string( $_POST['txtPassword']);
  
 
@@ -21,8 +21,8 @@
     echo $pas; 
     */
 
-      if ($nueva_consulta = $mysqli->prepare("Select nombre,tipo From usuarios Where usuario = ? AND password = ?")) {
-        $nueva_consulta->bind_param('ss', $usuario, $pas);
+      if ($nueva_consulta = $mysqli->prepare("Select nombre,tipo,correo From usuarios Where correo = ? AND password = ?")) {
+        $nueva_consulta->bind_param('ss', $correo, $pas);
         $nueva_consulta->execute();
         $resultado = $nueva_consulta->get_result();
         //echo $resultado->num_rows;  Filas encontradas
@@ -30,7 +30,7 @@
           
               $datos = $resultado->fetch_assoc();
               $_SESSION['usuario'] = $datos;
-              echo json_encode(array('error'=>false,'tipo'=>$datos['tipo'], 'nombre'=>$datos['nombre']));
+              echo json_encode(array('error'=>false,'tipo'=>$datos['tipo'],  'correo'=>$datos['correo'],  'nombre'=>$datos['nombre']));
         }else {
               echo json_encode(array('error'=>true));
         }

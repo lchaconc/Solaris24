@@ -129,9 +129,12 @@ View.prototype.formWithData = function (record, visor) {
     $(visor).html(htmlCode);
 }
 
-View.prototype.cards = function (array, visor) {
-  console.log(array);
+View.prototype.cards = function (array, visor, emailUser) {
+  //console.log(array);
   
+  console.log(emailUser);
+  
+
   var limite = array.length;
 
 
@@ -142,7 +145,15 @@ View.prototype.cards = function (array, visor) {
 for (let index = 0; index <limite; index++) {
   //console.log(index);
   //console.log(array[index].titulo );
-  var tmpIco, coreVisor;
+  var tmpIco, coreVisor, htmlEditDelete;
+
+  if (emailUser == array[index].correo ) {     
+    htmlEditDelete = 
+      "<span class='spn-ico spn-del' > <i class='fas fa-trash-alt'></i>  <span>" +
+      "<span class='spn-ico spn-edit' >  <i class='fas fa-pencil-alt'></i> <span>"       
+  } else {
+    htmlEditDelete = " "
+  };
 
   switch (array[index].tipo) {
     case "lnk":
@@ -182,7 +193,13 @@ for (let index = 0; index <limite; index++) {
     "<div class='row'>"  +
       "<div class='col-12 col-cards-container'>" +
   "<div class='card text-center'>" +
-  "<div class='card-header' > "+ tmpIco +" </div>" +
+  "<div class='card-header' > "+ 
+  "<div class='row'>" +
+      "<div class='col-4 text-center'> </div>" +      
+      "<div class='col-4 text-center'> "+ tmpIco +" </div>" +      
+      "<div class='col-4 text-right'> "+ htmlEditDelete +" </div>" +      
+  "</div>"   +
+  " </div>" +
   "<div class='card-body'>" +
     "<h5 class='card-title' > "+ array[index].titulo +" </h5>" +
     
@@ -192,7 +209,7 @@ for (let index = 0; index <limite; index++) {
 //        "<i class='far fa-eye'></i> Ver " +
 //    "</button>" +
   "</div>" +
-  "<div class='card-footer text-muted'>Publicado el " + array[index].fecha +  "</div>" +
+  "<div class='card-footer text-muted'>Publicado el " + array[index].fecha + "  por "+  array[index].nombre  +"  </div>" +
       "</div>" +
     "</div>" +
     "</div>");
