@@ -66,6 +66,10 @@
             <button id="btnSubir" class="btn btn-light"> <i class="fas fa-upload"></i> Subir archivo</button>
         </div>
         <br>
+
+
+
+
         <div class="row" id="visor" > </div>
 
         </div>        

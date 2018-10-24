@@ -8,16 +8,24 @@ body {
     background-color: aliceblue;
 }
 
+audio, video {    
+    width: 50%;
+    height: auto;
+}
+
+audio {
+    margin-top: 4em;
+}
+
 .container {
     background-color: #fff;
     padding: 1em;
     border-radius: 10px;
 }
 
-.card {
-    margin: 1em;
+.col-cards-container {
+    margin-bottom: 1em;
 }
-
 .png-ico {
     width: 4em;
     height: auto;

@@ -15,7 +15,7 @@ function prepareMod() {
 
 function getUser() {
     //Obtiene el usuario desde la session PHP 
-    console.log(user);
+    //console.log(user);
     $("#spnTipoUsuario").text(user);
     $("#spnNombre").text(nombre);
 }

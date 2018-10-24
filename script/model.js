@@ -6,15 +6,18 @@ function Model () {
 
 Model.prototype.dataset;
 
+
+
 Model.prototype.loadJson = function (pathJson, mCallBack) {
     $.getJSON(pathJson, function (data) {
+        //console.log("Json");        
         //console.log(data);
-        Model.prototype.dataset=data;
-        mCallBack(data);
+        Model.prototype.dataset = data;
+        mCallBack(data);            
         })
 }
 
-Model.prototype.getDataset = function () { 
+Model.prototype.getDataset = function () {    
     return Model.prototype.dataSet;
 }
 

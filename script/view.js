@@ -130,30 +130,71 @@ View.prototype.formWithData = function (record, visor) {
 }
 
 View.prototype.cards = function (array, visor) {
+  console.log(array);
+  
+  var limite = array.length;
+
 
   $(visor).empty();
 
-  var 
-  icoPdf = "<i class='fas fa-file-pdf'></i>",
-  icoVideo = "<i class='fas fa-video'></i>",
-  icoAudio = "<i class='fas fa-volume-up'></i>",
-  icoLink = "<i class='fas fa-link'></i>", 
-  htmlContainer; 
+  var htmlContainer = $("<div class='col-12'></div>"); 
   
-for (let index = 0; index < array.length; index++) {
-  htmlCard =   
+for (let index = 0; index <limite; index++) {
+  //console.log(index);
+  //console.log(array[index].titulo );
+  var tmpIco, coreVisor;
+
+  switch (array[index].tipo) {
+    case "link":
+    tmpIco = "<i class='fas fa-link'></i>";
+    coreVisor = "<a href='"+ array[index].urlArchivo +"' target='_balnk' >" +
+    "<img class='img-thumbnail lnk-ico' src='assets/ico/link.png' alt='imagen link de sitio web'></img>" +
+    "</a>";
+    break;
+    case "mp3":
+    tmpIco =  "<i class='fas fa-volume-up'></i>";
+    coreVisor = "<audio controls src='" + array[index].urlArchivo + "' ></audio>";
+    break;
+    case "mp4":
+    tmpIco = "<i class='fas fa-video'></i>";
+    coreVisor = "<video controls src='" + array[index].urlArchivo + "' ></video>";
+    break;
+    case "pdf":
+    tmpIco = "<i class='fas fa-file-pdf'></i>";
+    coreVisor = "<img class='img-thumbnail lnk-ico' src='assets/ico/pdf.png' alt='Card image cap'></img>";
+    coreVisor = "<a href='"+ array[index].urlArchivo +"' target='_balnk' >" +
+    "<img class='img-thumbnail lnk-ico' src='assets/ico/pdf.png' alt='imagen link de pdf'></img>" +
+    "</a>";
+    break;
+  
+    default:
+    console.log("Opción de ico fuera de rango");
+    
+      break;
+  }
+  
+  
+  var htmlCard = $(
+    "<div class='row'>"  +
+      "<div class='col-12 col-cards-container'>" +
   "<div class='card text-center'>" +
-  "<div class='card-header' > "+ icoLink +" </div>" +
+  "<div class='card-header' > "+ tmpIco +" </div>" +
   "<div class='card-body'>" +
-    "<h5 class='card-title' > "+  "TÍTIULO DE MUESTRA"  +" </h5>" +
-    "<p class='card-text'  > "+ " DESCRIPCIÓN " +"</p>" + 
-    "<button class='btn btn-primary'><i class='far fa-eye'></i> Ver </button>" +
+    "<h5 class='card-title' > "+ array[index].titulo +" </h5>" +
+    
+     "<p>" +  coreVisor + "</p>" +
+     "<p class='card-text'  > "+ array[index].descripcion +"</p>" +    
+  //  "<button class='btn btn-primary btn-ver-media' typeMedia='"+ array[index].tipo +"' target='"+ array[index].urlArchivo +"'   >" +
+//        "<i class='far fa-eye'></i> Ver " +
+//    "</button>" +
   "</div>" +
-  "<div class='card-footer text-muted'>" + " FECHA PUBLICACION " +  "</div>" +
-"</div>";
-  
+  "<div class='card-footer text-muted'>Publicado el " + array[index].fecha +  "</div>" +
+      "</div>" +
+    "</div>" +
+    "</div>");
+  $(htmlContainer).append(htmlCard);  
 }
 
-$(visor).html(htmlCard);
+$(visor).html(htmlContainer);
 
 }

@@ -15,9 +15,11 @@ function loadMod() {
 }
 
 function renderCards() {
-    m.loadJson("../../server/obtener_json_media.php", v.cards(m.getDataset(), "#visor"  )   );    
+   // m.loadJson("../../server/obtener_json_media.php", v.cards(m.getDataset(), "#visor"  )   );    
+   m.loadJson("../../server/obtener_json_media.php", function (array) {       
+       v.cards(array, "#visor");
+   } )
 }
-
 
 
 
