@@ -27,6 +27,11 @@ function handlerEvents() {
     $("#btnGoMedia").click(function () { 
         window.location.assign("../media/media.php");
     });
+    $("#btnGoups").click(function () { 
+        window.location.assign("../groups/groups.php");
+    });
+
+    
 
 
         $("#icoCloseSession").click(function () {

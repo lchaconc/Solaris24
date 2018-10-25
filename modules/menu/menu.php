@@ -104,6 +104,22 @@
             </div>
 
             <div class="col-6">
+            <button type="button" id="btnGoups" class="btn btn-info  btn-lg btn-block">
+            <i class="fas fa-users"></i> Grupos
+            </button>
+            </div>
+        </div>
+
+        <br>
+
+                <div class="row">
+            <div class="col-6">
+                <button type="button" id="btnXXX" class="btn btn-info  btn-lg btn-block">
+                <i class="fas fa-file-upload"></i> Libre
+                </button>
+            </div>
+
+            <div class="col-6">
             <button type="button" id="btnGoHelp" class="btn btn-info  btn-lg btn-block">
                 <i class="far fa-life-ring"></i> Ayuda
             </button>

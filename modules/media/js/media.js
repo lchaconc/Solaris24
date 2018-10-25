@@ -52,6 +52,7 @@ function handlerEvents() {
         
         formData.append("correo", correo );
         formData.append("nombre", nombre );
+        formData.append("grupo", "Supersonicos" );
 
         formData.append("typeFile", fileType );
         formData.append("objFile",  objFile[0].files[0]);

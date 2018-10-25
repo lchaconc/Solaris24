@@ -8,6 +8,7 @@
    $descripcion = utf8_decode($_POST['descFile']);
    $correo = utf8_decode($_POST['correo']);
    $nombre = utf8_decode($_POST['nombre']);
+   $grupo = utf8_decode($_POST['grupo']);
    $tipo = $_POST['typeFile'];
 
     echo $tipo;
@@ -33,7 +34,7 @@
 }
 
  
-    mysqli_query($mysqli,"INSERT INTO archivos (titulo, urlArchivo, descripcion, tipo, correo, nombre ) VALUES ('$titulo','$urlArchivo', '$descripcion', '$tipo', '$correo', '$nombre' )") or die ("Problemas al añadir elementos a la BD".mysqli_error($mysqli));
+    mysqli_query($mysqli,"INSERT INTO archivos (titulo, urlArchivo, descripcion, tipo, correo, nombre, grupo ) VALUES ('$titulo','$urlArchivo', '$descripcion', '$tipo', '$correo', '$nombre', '$grupo'  )") or die ("Problemas al añadir elementos a la BD".mysqli_error($mysqli));
     $errors = array();
     
     mysqli_close($mysqli);

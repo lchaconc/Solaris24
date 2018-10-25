@@ -145,14 +145,13 @@ View.prototype.cards = function (array, visor, emailUser) {
 for (let index = 0; index <limite; index++) {
   //console.log(index);
   //console.log(array[index].titulo );
-  var tmpIco, coreVisor, htmlEditDelete;
+  var tmpIco, coreVisor, htmlDelete;
 
   if (emailUser == array[index].correo ) {     
-    htmlEditDelete = 
-      "<span class='spn-ico spn-del' > <i class='fas fa-trash-alt'></i>  <span>" +
-      "<span class='spn-ico spn-edit' >  <i class='fas fa-pencil-alt'></i> <span>"       
+    htmlDelete = 
+      "<span class='spn-ico spn-del' > <i class='fas fa-trash-alt'></i>  <span>"       
   } else {
-    htmlEditDelete = " "
+    htmlDelete = " "
   };
 
   switch (array[index].tipo) {
@@ -197,7 +196,7 @@ for (let index = 0; index <limite; index++) {
   "<div class='row'>" +
       "<div class='col-4 text-center'> </div>" +      
       "<div class='col-4 text-center'> "+ tmpIco +" </div>" +      
-      "<div class='col-4 text-right'> "+ htmlEditDelete +" </div>" +      
+      "<div class='col-4 text-right'> "+ htmlDelete +" </div>" +      
   "</div>"   +
   " </div>" +
   "<div class='card-body'>" +
