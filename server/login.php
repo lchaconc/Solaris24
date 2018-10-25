@@ -21,7 +21,7 @@
     echo $pas; 
     */
 
-      if ($nueva_consulta = $mysqli->prepare("Select nombre,tipo,correo From usuarios Where correo = ? AND password = ?")) {
+      if ($nueva_consulta = $mysqli->prepare("Select nombre,tipo,correo, grupo From usuarios Where correo = ? AND password = ?")) {
         $nueva_consulta->bind_param('ss', $correo, $pas);
         $nueva_consulta->execute();
         $resultado = $nueva_consulta->get_result();
@@ -30,7 +30,7 @@
           
               $datos = $resultado->fetch_assoc();
               $_SESSION['usuario'] = $datos;
-              echo json_encode(array('error'=>false,'tipo'=>$datos['tipo'],  'correo'=>$datos['correo'],  'nombre'=>$datos['nombre']));
+              echo json_encode(array('error'=>false,'tipo'=>$datos['tipo'],  'correo'=>$datos['correo'],  'grupo'=>$datos['grupo'], 'nombre'=>$datos['nombre']));
         }else {
               echo json_encode(array('error'=>true));
         }

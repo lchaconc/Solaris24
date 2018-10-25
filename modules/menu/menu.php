@@ -10,7 +10,13 @@
 
 <script type="text/javascript">
     var user = '<?php echo$_SESSION['usuario']['tipo'];?>' 
-    var nombre = '<?php echo$_SESSION['usuario']['nombre'];?>'            
+    var nombre = '<?php echo$_SESSION['usuario']['nombre'];?>'
+	var grupo = '<?php echo$_SESSION['usuario']['grupo'];?>' 
+	console.log(grupo);
+	var tmp = grupo.split(",");
+	console.log(tmp );
+	console.log(tmp[0] );
+	
 </script>
 
 

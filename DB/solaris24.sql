@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 24-10-2018 a las 21:03:15
--- Versión del servidor: 5.7.19
--- Versión de PHP: 5.6.31
+-- Tiempo de generación: 25-10-2018 a las 03:56:15
+-- Versión del servidor: 5.7.21
+-- Versión de PHP: 7.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -37,25 +37,26 @@ CREATE TABLE IF NOT EXISTS `archivos` (
   `urlArchivo` varchar(64) NOT NULL,
   `nombre` varchar(256) NOT NULL,
   `correo` varchar(512) NOT NULL,
+  `grupo` text NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_archivos`)
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `archivos`
 --
 
-INSERT INTO `archivos` (`id_archivos`, `titulo`, `descripcion`, `tipo`, `urlArchivo`, `nombre`, `correo`, `fecha`) VALUES
-(6, 'Mano de bebé', 'Tierna mano de bebé con la de su mamá', 'mp4', '../../archivos_media/mp4/video1.mp4\r\n', 'Pedro Campos', 'pedro@correo.de', '2018-10-22 13:29:24'),
-(7, 'Tinta en agua', 'Hermoso efecto de tinta desparramándose en agua', 'mp4', '../../archivos_media/mp4/video2.mp4\r\n', 'Jimena Mendoza', 'jime@correo.de', '2018-10-22 13:29:35'),
-(8, 'Noticias', 'Noticias nacionales', 'lnk', 'https://www.nacion.com/', 'Pedro Campos', 'pedro@correo.de', '2018-10-22 20:41:34'),
-(5, 'Good Starts', 'Melodía hermosa para meditar', 'mp3', '../../archivos_media/mp3/Good_Starts.mp3', 'Jimena Mendoza', 'jime@correo.de', '2018-10-22 20:41:41'),
-(10, 'Race Car', 'Música para fondo de juego de carreras', 'mp3', '../../archivos_media/mp3/Race_Car.mp3\r\n', 'Jimena Mendoza', 'jime@correo.de', '2018-10-22 20:41:41'),
-(4, 'Los cuatro Acuerdos', 'Un libro de sabiduría tolteca\r\n', 'pdf', '../../archivos_media/pdf/Los-Cuatro-Acuerdos.pdf\r\n', 'Pedro Campos', 'pedro@correo.de', '2018-10-22 20:41:41'),
-(12, 'Teresita de Jesús', 'Historias de santos\r\n', 'pdf', '../../archivos_media/pdf/Teresita-de-Jesus-Manuscritos-com.pdf\r\n', 'Pedro Campos', 'pedro@correo.de', '2018-10-22 20:41:41'),
-(39, 'ddede', 'xxx', 'img', '../../archivos_media/img/angry-red-bird-256.png', 'Pedro Campos', 'pedro@correo.de', '2018-10-24 20:18:31'),
-(38, 'prueba', 'po', 'img', '../../archivos_media/img/Figura4.jpg', 'Pedro Campos', 'pedro@correo.de', '2018-10-24 20:16:17'),
-(40, 'no rere', ' erererere', 'pdf', '../../archivos_media/pdf/31351151-HTML5-Canvas-Cheat-Sheet.pdf', 'Pedro Campos', 'pedro@correo.de', '2018-10-24 20:53:49');
+INSERT INTO `archivos` (`id_archivos`, `titulo`, `descripcion`, `tipo`, `urlArchivo`, `nombre`, `correo`, `grupo`, `fecha`) VALUES
+(6, 'Mano de bebé', 'Tierna mano de bebé con la de su mamá', 'mp4', '../../archivos_media/mp4/video1.mp4\r\n', 'Pedro Campos', 'pedro@correo.de', '[ \"Pollos Azules\", \"Patos Locos\"  ]', '2018-10-22 13:29:24'),
+(7, 'Tinta en agua', 'Hermoso efecto de tinta desparramándose en agua', 'mp4', '../../archivos_media/mp4/video2.mp4\r\n', 'Jimena Mendoza', 'jime@correo.de', '[ \"Pollos Azules\"]', '2018-10-22 13:29:35'),
+(8, 'Noticias', 'Noticias nacionales', 'lnk', 'https://www.nacion.com/', 'Pedro Campos', 'pedro@correo.de', '[ \"Pollos Azules\", \"Patos Locos\"  ]', '2018-10-22 20:41:34'),
+(5, 'Good Starts', 'Melodía hermosa para meditar', 'mp3', '../../archivos_media/mp3/Good_Starts.mp3', 'Jimena Mendoza', 'jime@correo.de', '[ \"Pollos Azules\"]', '2018-10-22 20:41:41'),
+(10, 'Race Car', 'Música para fondo de juego de carreras', 'mp3', '../../archivos_media/mp3/Race_Car.mp3\r\n', 'Jimena Mendoza', 'jime@correo.de', '[ \"Pollos Azules\"]', '2018-10-22 20:41:41'),
+(4, 'Los cuatro Acuerdos', 'Un libro de sabiduría tolteca\r\n', 'pdf', '../../archivos_media/pdf/Los-Cuatro-Acuerdos.pdf\r\n', 'Pedro Campos', 'pedro@correo.de', '[ \"Pollos Azules\", \"Patos Locos\"  ]', '2018-10-22 20:41:41'),
+(12, 'Teresita de Jesús', 'Historias de santos\r\n', 'pdf', '../../archivos_media/pdf/Teresita-de-Jesus-Manuscritos-com.pdf\r\n', 'Pedro Campos', 'pedro@correo.de', '[ \"Pollos Azules\", \"Patos Locos\"  ]', '2018-10-22 20:41:41'),
+(39, 'ddede', 'xxx', 'img', '../../archivos_media/img/angry-red-bird-256.png', 'Pedro Campos', 'pedro@correo.de', '[ \"Pollos Azules\", \"Patos Locos\"  ]', '2018-10-24 20:18:31'),
+(38, 'prueba', 'po', 'img', '../../archivos_media/img/Figura4.jpg', 'Pedro Campos', 'pedro@correo.de', '[ \"Pollos Azules\", \"Patos Locos\"  ]', '2018-10-24 20:16:17'),
+(40, 'no rere', ' erererere', 'pdf', '../../archivos_media/pdf/31351151-HTML5-Canvas-Cheat-Sheet.pdf', 'Pedro Campos', 'pedro@correo.de', '[ \"Pollos Azules\", \"Patos Locos\"  ]', '2018-10-24 20:53:49');
 
 -- --------------------------------------------------------
 
@@ -97,6 +98,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `nombre` varchar(256) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `correo` varchar(256) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `password` varchar(256) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `grupo` text CHARACTER SET utf8 NOT NULL COMMENT 'almacena un json con el grup o grupos del usuario. El profesor puede tener más de un grupo, el estudiante no',
   `tipo` varchar(128) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id_usuario`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
@@ -105,9 +107,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nombre`, `correo`, `password`, `tipo`) VALUES
-(1, 'Pedro Campos', 'pedro@correo.de', 'pedro', 'Admin'),
-(2, 'Jimena Mendoza', 'jime@correo.de', 'jime', 'Usuario');
+INSERT INTO `usuarios` (`id_usuario`, `nombre`, `correo`, `password`, `grupo`, `tipo`) VALUES
+(1, 'Pedro Campos', 'pedro@correo.de', 'pedro', 'Pollos Azules,Patos Locos', 'Admin'),
+(2, 'Jimena Mendoza', 'jime@correo.de', 'jime', 'Pollos Azules', 'Usuario');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
