@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 25-10-2018 a las 03:56:15
--- Versión del servidor: 5.7.21
--- Versión de PHP: 7.1.16
+-- Tiempo de generación: 26-10-2018 a las 21:03:16
+-- Versión del servidor: 5.7.19
+-- Versión de PHP: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `archivos` (
   `grupo` text NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_archivos`)
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `archivos`
@@ -56,7 +56,8 @@ INSERT INTO `archivos` (`id_archivos`, `titulo`, `descripcion`, `tipo`, `urlArch
 (12, 'Teresita de Jesús', 'Historias de santos\r\n', 'pdf', '../../archivos_media/pdf/Teresita-de-Jesus-Manuscritos-com.pdf\r\n', 'Pedro Campos', 'pedro@correo.de', '[ \"Pollos Azules\", \"Patos Locos\"  ]', '2018-10-22 20:41:41'),
 (39, 'ddede', 'xxx', 'img', '../../archivos_media/img/angry-red-bird-256.png', 'Pedro Campos', 'pedro@correo.de', '[ \"Pollos Azules\", \"Patos Locos\"  ]', '2018-10-24 20:18:31'),
 (38, 'prueba', 'po', 'img', '../../archivos_media/img/Figura4.jpg', 'Pedro Campos', 'pedro@correo.de', '[ \"Pollos Azules\", \"Patos Locos\"  ]', '2018-10-24 20:16:17'),
-(40, 'no rere', ' erererere', 'pdf', '../../archivos_media/pdf/31351151-HTML5-Canvas-Cheat-Sheet.pdf', 'Pedro Campos', 'pedro@correo.de', '[ \"Pollos Azules\", \"Patos Locos\"  ]', '2018-10-24 20:53:49');
+(40, 'no rere', ' erererere', 'pdf', '../../archivos_media/pdf/31351151-HTML5-Canvas-Cheat-Sheet.pdf', 'Pedro Campos', 'pedro@correo.de', '[ \"Pollos Azules\", \"Patos Locos\"  ]', '2018-10-24 20:53:49'),
+(42, 'hongo bonito', 'este es un hongo abierto', 'img', '../../archivos_media/img/Recycle-Full-icon.png', 'Pedro Campos', 'pedro@correo.de', 'Supersonicos', '2018-10-25 17:59:18');
 
 -- --------------------------------------------------------
 
@@ -75,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `datos` (
   `texto2` varchar(256) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_datos`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `datos`
@@ -84,7 +85,31 @@ CREATE TABLE IF NOT EXISTS `datos` (
 INSERT INTO `datos` (`id_datos`, `correo`, `nombre`, `opcion`, `notas`, `texto1`, `texto2`, `fecha`) VALUES
 (8, 'lola@de-fr', 'ggggggg', '1', ' qw  ', '123', '456', '2018-10-18 17:25:36'),
 (13, 'demo1@mep.go.cr', 'Grupo de programadores', '5', 'esta es una demo\r\nfsd\r\nfsd\r\nfsd', 't1', 't2', '2018-10-22 19:13:59'),
-(14, 'sir@mep.go.cr', 'Sirlenita', '1', ' esta es una demo  esta es el campo editado', 'dasda 123', 'dasdas 456', '2018-10-24 20:50:11');
+(14, 'sir@mep.go.cr', 'Sirlenita', '1', ' esta es una demo  esta es el campo editado', 'dasda 123', 'dasdas 456', '2018-10-24 20:50:11'),
+(15, 'sir@mep.go.cr', 'defrfr', '1', ' fgfgfgf  ', 'dasda 123', '12bg  modificada', '2018-10-25 17:31:40');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `grupos`
+--
+
+DROP TABLE IF EXISTS `grupos`;
+CREATE TABLE IF NOT EXISTS `grupos` (
+  `id_grupo` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(64) NOT NULL,
+  `creador` varchar(64) NOT NULL COMMENT 'nombre del usuario',
+  `descripcion` varchar(128) NOT NULL COMMENT 'descripción del grupo',
+  PRIMARY KEY (`id_grupo`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `grupos`
+--
+
+INSERT INTO `grupos` (`id_grupo`, `nombre`, `creador`, `descripcion`) VALUES
+(1, 'Pollos Azules', 'Pedro Campos', 'Pollos extraños'),
+(2, 'Patos Locos', 'Pedro Campos', 'Patos exóticos');
 
 -- --------------------------------------------------------
 
