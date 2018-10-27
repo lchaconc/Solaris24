@@ -88,7 +88,7 @@
       
       <div class="row">
           <div class="col-6">
-            <button type="button" class="btn btn-primary btn-lg">
+            <button type="button" class="btn btn-primary btn-lg"  id="btnAbrirModal"  >
             <i class="fas fa-plus-circle"></i> Crear Grupo
             </button>
           </div>
@@ -155,6 +155,138 @@
     </div>
 
 
+
+<!-- Modal -->
+<div class="modal fade" id="mdlCreateGroup" tabindex="-1" role="dialog" aria-labelledby="mdlCreateGroupLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mdlCreateGroupLabel">Crear Grupo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+        <div class="col-12">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Nombre del grupo:</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Escriba aquí el nombre del gurpo" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+        </div>        
+      </div>
+      <br>
+
+        <div class="row">
+
+    <div class="col-6">
+    <div class="input-group mb-3">
+          <input type="text" id="txtNombreParticipante" class="form-control" placeholder="Nombre del estudainte a buscar" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+    </div>
+    <div class="col-6"></div>
+
+
+
+    
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+        <table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Agregar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td><i class="fas fa-arrow-alt-circle-right"></i></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td><i class="fas fa-arrow-alt-circle-right"></i></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td><i class="fas fa-arrow-alt-circle-right"></i></td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+        <div class="col-6">
+        <table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
     

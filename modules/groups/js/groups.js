@@ -4,7 +4,7 @@ var m = new Model (), v = new View ();
 
 $(document).ready(function () {
     prepareMod();
-   // handlerEvents();
+    handlerEvents();
     //loadMod();
 });
 
@@ -24,20 +24,11 @@ function renderCards() {
 
 
 function handlerEvents() {
-    var fileType;  //t8ipo de archivo que seleciona el usuario para publicar
+    
 
-    $("#btnSubir").click(function (e) { 
+    $("#btnAbrirModal").click(function (e) { 
         e.preventDefault();
-        $("#modalFile").modal();
-    });
-
-
-    $(".btn-file").click(function () {
-        fileType = $(this).attr("target");
-        console.log(fileType);
-        
-        $(".div-icons-fille").slideDown();
-        
+        $("#mdlCreateGroup").modal();
     });
 
    

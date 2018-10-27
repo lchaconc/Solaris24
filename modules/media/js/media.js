@@ -18,6 +18,7 @@ function renderCards() {
    // m.loadJson("../../server/obtener_json_media.php", v.cards(m.getDataset(), "#visor"  )   );    
    m.loadJson("../../server/obtener_json_media.php", function (array) {       
        v.cards(array.reverse(), "#visor", correo );
+       eDeleteEntry();
    } )
 }
 
@@ -70,4 +71,19 @@ function handlerEvents() {
     });
 }
 
-
+function eDeleteEntry() {
+    $(".spn-del").click(function (e) { 
+        e.preventDefault();
+                    alertify.confirm(nameSistem, "¿Desea realmente eliminar la publicación?" ,
+                        function(){
+                            console.log("Eliminar");
+                            
+                        },
+                        function(){
+                            console.log("Cancelar");
+                            
+                        });
+        
+    });
+    
+}
